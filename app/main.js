@@ -37,6 +37,12 @@ function rerender() {
   else if (route === "bills") view.innerHTML = pageBills();
   else if (route === "reports") view.innerHTML = pageReports();
   else view.innerHTML = pageDashboard();
+  if (storageUnavailable()) {
+    view.insertAdjacentHTML("afterbegin",
+      '<p class="storage-warning" role="alert">Browser storage is unavailable, ' +
+      'so your changes work on this page but will not be saved after you leave. ' +
+      'Allow cookies / site data for this page, or free up browser storage, then reload.</p>');
+  }
   afterRender(route);
 }
 

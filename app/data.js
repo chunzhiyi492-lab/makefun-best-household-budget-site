@@ -133,12 +133,32 @@ function loadState() {
 }
 
 function saveState(state) {
-  localStorage.setItem(STORE_KEY, JSON.stringify(state));
+  // localStorage can throw (private mode, disabled cookies, quota full).
+  // A failed write must never kill the edit itself: keep the change in
+  // memory, remember that persistence is down, and let the UI say so.
+  try {
+    localStorage.setItem(STORE_KEY, JSON.stringify(state));
+  } catch (e) {
+    storageFailed = true;
+  }
 }
 
 function resetState() {
-  localStorage.removeItem(STORE_KEY);
+  try {
+    localStorage.removeItem(STORE_KEY);
+  } catch (e) {
+    storageFailed = true;
+  }
   return freshState();
+}
+
+// True once a save has failed, so the page can warn that edits will not
+// survive leaving the page. Starts false; loadState already tolerates a
+// broken store on the read side.
+let storageFailed = false;
+
+function storageUnavailable() {
+  return storageFailed;
 }
 
 // ---- money and sums ------------------------------------------------------

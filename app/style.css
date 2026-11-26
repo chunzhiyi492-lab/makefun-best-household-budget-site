@@ -138,6 +138,7 @@ input[type="number"] { width: 110px; text-align: right; }
 .tag-overdue { color: #C0452F; font-weight: 700; font-size: 12px; margin-left: 6px; }
 .tag-paid { color: #176B52; font-weight: 700; font-size: 12px; }
 canvas.chart { display: block; margin: 6px auto; max-width: 100%; height: auto; }
+.storage-warning { background: #FDF0D5; border: 1px solid #D97742; color: #7A3E12; border-radius: 10px; padding: 10px 14px; margin: 0 0 16px; font-size: 14px; }
 .donut-wrap { display: flex; gap: 8px; align-items: flex-start; flex-wrap: wrap; }
 .donut-wrap canvas { flex: 0 0 auto; }
 .donut-wrap .legend { flex: 1 1 220px; columns: 1; margin-top: 18px; }
