@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>NestEgg — Household Budget</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="shell">
+  <aside class="sidebar">
+    <div class="brand-name">NestEgg</div>
+    <div class="brand-sub">Household Budget</div>
+    <nav class="nav" id="nav">
+      <a href="#/" data-route="">Dashboard</a>
+      <a href="#/transactions" data-route="transactions">Transactions</a>
+      <a href="#/budget" data-route="budget">Budget</a>
+      <a href="#/goals" data-route="goals">Savings Goals</a>
+      <a href="#/bills" data-route="bills">Bills</a>
+      <a href="#/reports" data-route="reports">Reports</a>
+    </nav>
+    <div class="side-card">
+      <div class="big">Savings this month $1,200</div>
+      <p>Emergency, vacation &amp; car funds</p>
+      <a href="#/goals">See goals &rarr;</a>
+    </div>
+    <div class="side-note">Data stays in this browser. No account, no network.</div>
+  </aside>
+  <main class="main">
+    <div class="topbar">
+      <h1 id="page-title">Dashboard</h1>
+      <span class="who">The Miller Family &middot; November 2026</span>
+      <span style="flex:1"></span>
+      <a class="btn" href="#/transactions">+ Add transaction</a>
+    </div>
+    <div id="view"></div>
+    <div class="footer">NestEgg — a household budget that lives entirely in your browser. Figures shown are the Miller family&rsquo;s November 2026 demo data; add your own and it saves on this device.</div>
+  </main>
+</div>
+<script src="data.js"></script>
+<script src="charts.js"></script>
+<script src="main.js"></script>
+</body>
+</html>
